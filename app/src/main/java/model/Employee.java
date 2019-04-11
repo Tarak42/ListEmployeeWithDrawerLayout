@@ -1,6 +1,8 @@
 package model;
 
-public abstract class Employee {
+import java.io.Serializable;
+
+public abstract class Employee implements Serializable {
     protected String employeeId;
     private String employeeName;
     private String employeeJob;
