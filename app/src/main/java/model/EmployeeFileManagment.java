@@ -29,7 +29,7 @@ public class EmployeeFileManagment {
                 String type = st.nextToken();
                 if (type.equals("F") || type.equals("f")){
                     listOfEmployee.add(new FullTime(st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),Float.parseFloat(st.nextToken())));
-                }else if (type.equals("E") || type.equals("e")){
+                }else if (type.equals("C") || type.equals("c")){
                     listOfEmployee.add(new Contractor(st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),st.nextToken(),Float.parseFloat(st.nextToken()),Float.parseFloat(st.nextToken())));
                 }
 

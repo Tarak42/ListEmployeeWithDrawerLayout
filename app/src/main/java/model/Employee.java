@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Employee {
-    private String employeeId;
+    protected String employeeId;
     private String employeeName;
     private String employeeJob;
 
@@ -13,4 +13,17 @@ public abstract class Employee {
 
     public abstract String getEmployeeId();
 
+    public String getEmployeeName(){
+        return employeeName;
+    }
+
+    public String getEmployeeJob(){
+        return employeeJob;
+    }
+
+    @Override
+    public String toString() {
+        return "\t" + employeeName;
+
+    }
 }
