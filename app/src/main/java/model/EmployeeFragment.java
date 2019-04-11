@@ -26,7 +26,7 @@ public class EmployeeFragment extends android.app.Fragment{
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        
+
     }
 }
 
