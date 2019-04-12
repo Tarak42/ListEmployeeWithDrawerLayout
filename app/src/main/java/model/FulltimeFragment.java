@@ -22,11 +22,8 @@ public class FulltimeFragment extends android.app.Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.i("------>","onActivityCreated");
 
         Employee employee = (Employee) getArguments().getSerializable(MainActivity.KEY);
-
-
         FullTime aFullTime = (FullTime) employee;
 
         TextView textViewFullTimeId = getActivity().findViewById(R.id.textViewFId);
@@ -39,7 +36,5 @@ public class FulltimeFragment extends android.app.Fragment {
         textViewFullTimeStartDate.setText(aFullTime.getStartDate());
         TextView textViewFullTimeSalary = getActivity().findViewById(R.id.textViewFSalary);
         textViewFullTimeSalary.setText(String.valueOf(aFullTime.getSalary()));
-        Log.i("------>","I'm here");
-
     }
 }

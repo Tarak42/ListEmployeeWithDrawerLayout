@@ -5,16 +5,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.appsmontreal.projectemployeeapp.MainActivity;
 import com.appsmontreal.projectemployeeapp.R;
 
-public class ContractorFragment extends android.app.Fragment {
+public class ContractorFragment extends android.app.Fragment implements View.OnClickListener {
+    Button exitButton;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
             return inflater.inflate(R.layout.contractor_fragment,container,false);
     }
 
@@ -22,10 +24,8 @@ public class ContractorFragment extends android.app.Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.i("------>","onActivityCreated");
 
         Employee employee = (Employee) getArguments().getSerializable(MainActivity.KEY);
-
         Contractor aContractor = (Contractor) employee;
 
         TextView textViewContractorId = getActivity().findViewById(R.id.textViewCId);
@@ -42,7 +42,16 @@ public class ContractorFragment extends android.app.Fragment {
         textViewContractorHoursCost.setText(String.valueOf(aContractor.getHourSalary()));
         TextView textViewContractorENumberHour = getActivity().findViewById(R.id.textViewCNumberHours);
         textViewContractorENumberHour.setText(String.valueOf(aContractor.getNumberHoursPerWeek()));
+        Button exitButton = getActivity().findViewById(R.id.exitButton);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.exitButton){
+//            finish();
+
+        }
     }
 }
 
