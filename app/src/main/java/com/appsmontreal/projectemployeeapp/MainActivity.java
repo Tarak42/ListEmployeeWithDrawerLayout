@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import model.ContractorFragment;
 import model.Employee;
 import model.EmployeeFileManagment;
-import model.EmployeeFragment;
 import model.FullTime;
 import model.FulltimeFragment;
 
@@ -42,8 +41,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listEmployee = EmployeeFileManagment.readFile(this,FILENAME);
         employeeArrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listEmployee);
         listViewEmployee.setAdapter(employeeArrayAdapter);
-
-
     }
 
     @Override
@@ -52,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         bundle.putSerializable(KEY,listEmployee.get(position));
 
         //REPLACE THE LINEAR LAYOUT WITH FRAGMENT
-
         if (listEmployee.get(position) instanceof FullTime){
             FulltimeFragment  fulltimeFragment = new FulltimeFragment();
             fulltimeFragment.setArguments(bundle);
