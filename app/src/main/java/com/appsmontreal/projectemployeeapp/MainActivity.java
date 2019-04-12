@@ -10,9 +10,12 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import model.ContractorFragment;
 import model.Employee;
 import model.EmployeeFileManagment;
 import model.EmployeeFragment;
+import model.FullTime;
+import model.FulltimeFragment;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     public static final String KEY = "keyOk";
@@ -48,19 +51,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         bundle.putSerializable(KEY,listEmployee.get(position));
 
         //REPLACE THE LINEAR LAYOUT WITH FRAGMENT
-        EmployeeFragment employeeFragment = new EmployeeFragment();
-        employeeFragment.setArguments(bundle);
+//        EmployeeFragment employeeFragment = new EmployeeFragment();
 
 
-        //REFERENCE THE FRAGMENT MANAGER
-        android.app.FragmentManager fragmentManager = getFragmentManager();
-        //BEGIN THE TRANSACTION
-        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //REPLACE LINEAR LAYOUT MAIN_UI WITH THE FRAGMENT
-        fragmentTransaction.replace(R.id.main_ui,employeeFragment);
-
-        //COMMIT THE TRANSACTION
-        fragmentTransaction.commit();
+        if (listEmployee.get(position) instanceof FullTime){
+            FulltimeFragment  fulltimeFragment = new FulltimeFragment();
+            fulltimeFragment.setArguments(bundle);
+            //REFERENCE THE FRAGMENT MANAGER
+            android.app.FragmentManager fragmentManager = getFragmentManager();
+            //BEGIN THE TRANSACTION
+            android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            //REPLACE LINEAR LAYOUT MAIN_UI WITH THE FRAGMENT
+            fragmentTransaction.replace(R.id.main_ui,fulltimeFragment);
+            fragmentTransaction.commit();
+        }else{
+            ContractorFragment contractorFragment = new ContractorFragment();
+            contractorFragment.setArguments(bundle);
+            //REFERENCE THE FRAGMENT MANAGER
+            android.app.FragmentManager fragmentManager = getFragmentManager();
+            //BEGIN THE TRANSACTION
+            android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            //REPLACE LINEAR LAYOUT MAIN_UI WITH THE FRAGMENT
+            fragmentTransaction.replace(R.id.main_ui,contractorFragment);
+            fragmentTransaction.commit();
+        }
+//        employeeFragment.setArguments(bundle);
+//
+//
+//        //REFERENCE THE FRAGMENT MANAGER
+//        android.app.FragmentManager fragmentManager = getFragmentManager();
+//        //BEGIN THE TRANSACTION
+//        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        //REPLACE LINEAR LAYOUT MAIN_UI WITH THE FRAGMENT
+//        fragmentTransaction.replace(R.id.main_ui,employeeFragment);
+//
+//        //COMMIT THE TRANSACTION
+//        fragmentTransaction.commit();
 
         setTitle(listEmployee.get(position).getEmployeeName());
 

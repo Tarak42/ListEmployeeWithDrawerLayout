@@ -11,10 +11,12 @@ import com.appsmontreal.projectemployeeapp.MainActivity;
 import com.appsmontreal.projectemployeeapp.R;
 
 public class EmployeeFragment extends android.app.Fragment{
-    boolean flag;
+    boolean flag = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
+        Log.i("----->", savedInstanceState.toString());
+//        Log.i("Container", "onCreateView");
         if (flag){
             return inflater.inflate(R.layout.contractor_fragment,container,false);
         }
@@ -28,12 +30,12 @@ public class EmployeeFragment extends android.app.Fragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.i("------>","onActivityCreated");
 
         Employee employee = (Employee) getArguments().getSerializable(MainActivity.KEY);
 
         if (employee instanceof FullTime){
             FullTime aFullTime = (FullTime) employee;
-            flag = false;
 
             TextView textViewFullTimeId = getActivity().findViewById(R.id.textViewFId);
             textViewFullTimeId.setText(aFullTime.employeeId);
@@ -49,7 +51,6 @@ public class EmployeeFragment extends android.app.Fragment{
         }
         else{
             Contractor aContractor = (Contractor) employee;
-            flag = true;
 
             TextView textViewContractorId = getActivity().findViewById(R.id.textViewCId);
             textViewContractorId.setText(aContractor.employeeId);
