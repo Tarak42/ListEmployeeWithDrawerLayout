@@ -5,12 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.appsmontreal.projectemployeeapp.MainActivity;
 import com.appsmontreal.projectemployeeapp.R;
 
-public class FulltimeFragment extends android.app.Fragment {
+public class FullTimeFragment extends android.app.Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,5 +37,15 @@ public class FulltimeFragment extends android.app.Fragment {
         textViewFullTimeStartDate.setText(aFullTime.getStartDate());
         TextView textViewFullTimeSalary = getActivity().findViewById(R.id.textViewFSalary);
         textViewFullTimeSalary.setText(String.valueOf(aFullTime.getSalary()));
+        Button exitButton = getActivity().findViewById(R.id.exitButtonFT);
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.exitButtonFT){
+//            finish();
+
+        }
+    }
+
 }

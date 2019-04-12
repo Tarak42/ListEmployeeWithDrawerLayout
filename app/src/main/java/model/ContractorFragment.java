@@ -42,13 +42,13 @@ public class ContractorFragment extends android.app.Fragment implements View.OnC
         textViewContractorHoursCost.setText(String.valueOf(aContractor.getHourSalary()));
         TextView textViewContractorENumberHour = getActivity().findViewById(R.id.textViewCNumberHours);
         textViewContractorENumberHour.setText(String.valueOf(aContractor.getNumberHoursPerWeek()));
-        Button exitButton = getActivity().findViewById(R.id.exitButton);
+        Button exitButton = getActivity().findViewById(R.id.exitButtonContractor);
 
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.exitButton){
+        if (v.getId() == R.id.exitButtonContractor){
 //            finish();
 
         }

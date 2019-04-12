@@ -1,6 +1,5 @@
 package com.appsmontreal.projectemployeeapp;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +14,7 @@ import model.ContractorFragment;
 import model.Employee;
 import model.EmployeeFileManagment;
 import model.FullTime;
-import model.FulltimeFragment;
+import model.FullTimeFragment;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     public static final String KEY = "keyOk";
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //REPLACE THE LINEAR LAYOUT WITH FRAGMENT
         if (listEmployee.get(position) instanceof FullTime){
-            FulltimeFragment  fulltimeFragment = new FulltimeFragment();
+            FullTimeFragment fulltimeFragment = new FullTimeFragment();
             fulltimeFragment.setArguments(bundle);
             buildFragment(fulltimeFragment);
 
