@@ -24,8 +24,7 @@ public class FullTimeFragment extends android.app.Fragment implements View.OnCli
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Employee employee = (Employee) getArguments().getSerializable(MainActivity.KEY);
-        FullTime aFullTime = (FullTime) employee;
+        FullTime aFullTime = (FullTime) getArguments().getSerializable(MainActivity.KEY);
 
         TextView textViewFullTimeId = getActivity().findViewById(R.id.textViewFId);
         textViewFullTimeId.setText(aFullTime.employeeId);

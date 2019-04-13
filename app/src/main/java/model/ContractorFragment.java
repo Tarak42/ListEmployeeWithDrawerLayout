@@ -25,8 +25,7 @@ public class ContractorFragment extends android.app.Fragment implements View.OnC
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Employee employee = (Employee) getArguments().getSerializable(MainActivity.KEY);
-        Contractor aContractor = (Contractor) employee;
+        Contractor aContractor = (Contractor) getArguments().getSerializable(MainActivity.KEY);
 
         TextView textViewContractorId = getActivity().findViewById(R.id.textViewCId);
         textViewContractorId.setText(aContractor.employeeId);
