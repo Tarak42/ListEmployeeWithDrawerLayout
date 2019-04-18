@@ -37,12 +37,13 @@ public class FullTimeFragment extends android.app.Fragment implements View.OnCli
         TextView textViewFullTimeSalary = getActivity().findViewById(R.id.textViewFSalary);
         textViewFullTimeSalary.setText(String.valueOf(aFullTime.getSalary()));
         Button exitButton = getActivity().findViewById(R.id.exitButtonFT);
+        exitButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.exitButtonFT){
-//            finish();
+            getActivity().finish();
 
         }
     }

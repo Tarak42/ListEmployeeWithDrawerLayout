@@ -1,5 +1,6 @@
 package model;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +13,10 @@ import com.appsmontreal.projectemployeeapp.MainActivity;
 import com.appsmontreal.projectemployeeapp.R;
 
 public class ContractorFragment extends android.app.Fragment implements View.OnClickListener {
-    Button exitButton;
+//    private Context context;
+
+    public ContractorFragment() {
+    }
 
 
     @Override
@@ -42,13 +46,14 @@ public class ContractorFragment extends android.app.Fragment implements View.OnC
         TextView textViewContractorENumberHour = getActivity().findViewById(R.id.textViewCNumberHours);
         textViewContractorENumberHour.setText(String.valueOf(aContractor.getNumberHoursPerWeek()));
         Button exitButton = getActivity().findViewById(R.id.exitButtonContractor);
+        exitButton.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.exitButtonContractor){
-//            finish();
+            getActivity().finish();
 
         }
     }
